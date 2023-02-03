@@ -2,13 +2,12 @@
 place:Tokyo University of technology
  
 # Member
-Leader:
+Leader:Vedbod
 
-PR:
+PR:naomi naoFF
 
-Sound:
+Sound:KohakuYagi
 
-3D:
+3D:naoFF
 
-Programer:FRICK
-
+Programer:FRICK,KoukiNakata
