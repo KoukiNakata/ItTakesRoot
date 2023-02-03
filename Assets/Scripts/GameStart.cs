@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameStart : MonoBehaviour
 {
     public bool flag_start;//true.ƒQ[ƒ€ó‘Ô@false.”ñƒQ[ƒ€ó‘Ô
+    [SerializeField] GameObject startButton; 
+    
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,7 @@ public class GameStart : MonoBehaviour
     public void gameStart()
     {
         flag_start = true;
+        startButton.SetActive(false);
     }
 
 
