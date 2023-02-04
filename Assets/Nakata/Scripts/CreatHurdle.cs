@@ -22,6 +22,7 @@ public class CreatHurdle : MonoBehaviour
     {
         if(gameStart.flag_start&&!gameEnd.flag_gameEnd)
         {
+            #region áŠQ•¨‚Ì¶¬
             time += Time.deltaTime;
             if(time>span)
             {
@@ -29,6 +30,8 @@ public class CreatHurdle : MonoBehaviour
                 float x = Random.Range(2.5f,-2.5f);
                 Instantiate(hurdles[0],new Vector3(x,tarObj.transform.position.y-10,0),Quaternion.identity);
             }
+            #endregion
+
         }
     }
 }
