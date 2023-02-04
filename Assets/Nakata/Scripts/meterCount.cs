@@ -24,7 +24,9 @@ public class meterCount : MonoBehaviour
     {
         if(gameStart.flag_start&&!gameEnd.flag_gameEnd)
         {
+            //最初の位置からどれだけ進んだか
             countMeter = (startPos- tarObj.transform.position.y);
+            //メーターの表示
             meter.text = countMeter.ToString("F1") + "M";
         }
     }
