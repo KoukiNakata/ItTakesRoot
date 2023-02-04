@@ -19,15 +19,12 @@ public class PlayerStatus : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(gameStart.flag_start&&!gameEnd.flag_gameEnd)
-        {
-            nutritionVal -= decreaseVal*Time.deltaTime;
-        }
+        //âhó{ÇÃå∏è≠
+        if(gameStart.flag_start&&!gameEnd.flag_gameEnd) nutritionVal -= decreaseVal*Time.deltaTime;
+        
 
-
-        if(nutritionVal<=0)
-        {
-            gameEnd.gameEnd();
-        }
+        //âhó{Ç™êsÇ´ÇΩéûÉQÅ[ÉÄÉGÉìÉh
+        if(nutritionVal<=0) gameEnd.gameEnd();
+        
     }
 }

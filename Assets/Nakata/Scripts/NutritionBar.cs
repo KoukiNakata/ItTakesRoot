@@ -18,6 +18,7 @@ public class NutritionBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //ÉoÅ[ÇÃï\é¶
         nutritionBar.fillAmount = (playerStatus.nutritionVal/maxnutritionVal);
 
     }
