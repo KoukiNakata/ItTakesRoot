@@ -32,13 +32,6 @@ public class PlayerStatus : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "nutorition")
-        {
-            //‰h—{‚Ì‰ñ•œ
-            nutritionVal += increaseVal;
-            //‰h—{‚Ìíœ
-            Destroy(collision.gameObject);
-        }
-
+        if (collision.gameObject.tag == "nutorition") nutritionVal += increaseVal;
     }
 }
