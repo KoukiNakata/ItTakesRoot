@@ -28,14 +28,26 @@ public class RootMovement : MonoBehaviour
         GrowRoot();
         GrowRoot();
         GrowRoot();
+        GrowRoot();
+        GrowRoot();
+        GrowRoot();
+        GrowRoot();
+        GrowRoot();
+        GrowRoot();
+        GrowRoot();
+        GrowRoot();
+        GrowRoot();
+        GrowRoot();
+        GrowRoot();
+        GrowRoot();
+
     }
 
     // Update is called once per frame
     void Update()
     {
        
-        //move downward
-        transform.position += transform.up * MoveSpeed * Time.deltaTime;
+        
         //Rotate root
         if (Input.GetMouseButtonDown(0))
         {
@@ -59,16 +71,19 @@ public class RootMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-                //Store position history
+
+        //move downward
+        transform.position += transform.up * MoveSpeed * Time.deltaTime;
+        //Store position history
         PositionsHistory.Insert(0, transform.position);
         // move body parts
         int index = 0;
         foreach (var body in BodyParts) {
             Vector3 point = PositionsHistory[Mathf.Min(index * Gap, PositionsHistory.Count - 1)];
             Vector3 moveDirection = point - body.transform.position;
-            body.transform.position += moveDirection * RootSpeed * Time.deltaTime;
+            body.transform.position += moveDirection * RootSpeed * Time.fixedDeltaTime;
             body.transform.localEulerAngles = preRotation;
-            body.transform.LookAt(point, Vector3.left);
+            body.transform.LookAt(point, preRotation);
             index ++;
 
         }
