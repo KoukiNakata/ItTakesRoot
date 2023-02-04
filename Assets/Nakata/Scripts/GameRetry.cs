@@ -19,6 +19,7 @@ public class GameRetry : MonoBehaviour
 
     public void  gameRetry()
     {
+        //SE
         SceneManager.LoadScene("Nakata_Scene");
     }
 }
