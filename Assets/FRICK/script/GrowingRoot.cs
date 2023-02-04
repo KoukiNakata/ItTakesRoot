@@ -1,22 +1,12 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
 namespace SplineMesh {
-    /// <summary>
-    /// Example of component to show the deformation of the mesh on a changing
-    /// interval and changing spline nodes.
-    /// 
-    /// In this example, as the MeshBender is working on spline space, it will update
-    /// the mesh if one of the curve change. Each change make the MeshBender "dirty" and
-    /// it will compute the mesh only once on it's next update call.
-    /// 
-    /// This component is only for demo purpose and is not intended to be used as-is.
-    /// </summary>
     [ExecuteInEditMode]
     [RequireComponent(typeof(Spline))]
-    public class ExampleGrowingRoot : MonoBehaviour {
+    public class GrowingRoot : MonoBehaviour {
         private GameObject generated;
         private Spline spline;
         private float rate = 0;
@@ -51,7 +41,7 @@ namespace SplineMesh {
                 Vector3 mousePosition = Input.mousePosition;
                 mousePosition.z = 10;
                 Vector3 target = Camera.main.ScreenToWorldPoint(mousePosition);
-                spline.AddNode(new SplineNode(new Vector3(target.x, -target.y, 0), new Vector3(0, -1, 0)));
+                //spline.AddNode(new SplineNode(new Vector3(target.x, -target.y, 0), new Vector3(0, -1, 0)));
             }
 
             float nodeDistance = 0;
