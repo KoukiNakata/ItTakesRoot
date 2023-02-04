@@ -9,6 +9,7 @@ public class PlayerStatus : MonoBehaviour
 
     public float nutritionVal;//‰h—{‚Ì’l
     [SerializeField] float decreaseVal;//‰h—{‚ªŒ¸‚é’l
+    [SerializeField] float increaseVal;//‰h—{‚ª‘‚¦‚é’l
 
     // Start is called before the first frame update
     void Start()
@@ -26,5 +27,11 @@ public class PlayerStatus : MonoBehaviour
         //‰h—{‚ªs‚«‚½ƒQ[ƒ€ƒGƒ“ƒh
         if(nutritionVal<=0) gameEnd.gameEnd();
         
+    }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "nutorition") nutritionVal += increaseVal;
     }
 }
