@@ -20,7 +20,7 @@ public class GameEnd : MonoBehaviour
     }
 
     //ゲームエンド時の処理　ゲームエンドでこの処理を呼び出す
-    void gameEnd()
+    public void gameEnd()
     {
         flag_gameEnd = true;
         Debug.Log("ゲームエンド");
