@@ -5,6 +5,10 @@ using UnityEngine;
 public class GameStart : MonoBehaviour
 {
     public bool flag_start;//true.ÉQÅ[ÉÄèÛë‘Å@false.îÒÉQÅ[ÉÄèÛë‘
+    public AudioClip title;
+    public AudioClip startClick;
+    public AudioClip main;
+    AudioSource audioSource;
     [SerializeField] GameObject startButton;
     [SerializeField] GameObject CountMeter;
     [SerializeField] GameObject NutritionBar;
@@ -21,7 +25,7 @@ public class GameStart : MonoBehaviour
         NutritionBar.SetActive(false);
         Teamlogo.SetActive(true);
         Gamelogo.SetActive(true);
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -46,6 +50,8 @@ public class GameStart : MonoBehaviour
         Gamelogo.SetActive(false);
 
         //SE
+        audioSource.Stop();
+        audioSource.PlayOneShot(startClick);
     }
 
 
