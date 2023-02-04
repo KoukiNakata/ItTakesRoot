@@ -39,6 +39,12 @@ public class GameStart : MonoBehaviour
         */
     }
 
+    public void titmeMusic()
+    {
+        audioSource.clip = main;
+        audioSource.Play();
+    }
+
     //ボタンでこの関数を呼び出してゲームスタート？
     public void gameStart()
     {
@@ -50,7 +56,7 @@ public class GameStart : MonoBehaviour
         Gamelogo.SetActive(false);
 
         //SE
-        audioSource.Stop();
+        //audioSource.Stop();
         audioSource.PlayOneShot(startClick);
     }
 
