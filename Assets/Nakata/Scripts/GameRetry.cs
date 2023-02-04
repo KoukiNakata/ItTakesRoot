@@ -5,10 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class GameRetry : MonoBehaviour
 {
+    public AudioClip retry;
+    AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -19,7 +22,13 @@ public class GameRetry : MonoBehaviour
 
     public void  gameRetry()
     {
-        //SE
+        //SE        
+        audioSource.PlayOneShot(retry);
+        Invoke("scene", 0.2f);
+    }
+
+    void scene()
+    {
         SceneManager.LoadScene("Nakata_Scene");
     }
 }
