@@ -1062,7 +1062,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &137088091
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3731,7 +3731,7 @@ PrefabInstance:
       objectReference: {fileID: 1585580132}
     - target: {fileID: 5110117596893943302, guid: 5d22d30073f966a41b166ccc50f1d4bb, type: 3}
       propertyPath: nutritionVal
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 5110117596893943303, guid: 5d22d30073f966a41b166ccc50f1d4bb, type: 3}
       propertyPath: m_Name
