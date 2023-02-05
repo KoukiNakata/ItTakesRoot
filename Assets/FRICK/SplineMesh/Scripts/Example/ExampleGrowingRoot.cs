@@ -34,15 +34,6 @@ namespace SplineMesh {
         private void OnEnable() {
             rate = 0;
             Init();
-#if UNITY_EDITOR
-            EditorApplication.update += EditorUpdate;
-#endif
-        }
-
-        void OnDisable() {
-#if UNITY_EDITOR
-            EditorApplication.update -= EditorUpdate;
-#endif
         }
 
         private void OnValidate() {
@@ -57,6 +48,10 @@ namespace SplineMesh {
             rate += Time.deltaTime / DurationInSecond;
             if (rate > 1) {
                 rate --;
+                Vector3 mousePosition = Input.mousePosition;
+                mousePosition.z = 10;
+                Vector3 target = Camera.main.ScreenToWorldPoint(mousePosition);
+                spline.AddNode(new SplineNode(new Vector3(target.x, -target.y, 0), new Vector3(0, -1, 0)));
             }
             Contort();
         }
@@ -65,16 +60,18 @@ namespace SplineMesh {
             float nodeDistance = 0;
             int i = 0;
             foreach (var n in spline.nodes) {
-                float nodeDistanceRate = nodeDistance / spline.Length;
-                float nodeScale = startScale * (rate - nodeDistanceRate);
-                n.Scale = new Vector2(nodeScale, nodeScale);
+                float nodeScale1 = startScale * rate;
+                float nodeScale2 = startScale - (startScale * rate);
+                spline.nodes[spline.curves.Count - 1].Scale = new Vector2(nodeScale1, nodeScale1);
+                spline.nodes[spline.curves.Count].Scale = new Vector2(nodeScale2, nodeScale2);
                 if (i < spline.curves.Count) {
                     nodeDistance += spline.curves[i++].Length;
                 }
             }
 
             if (generated != null) {
-                meshBender.SetInterval(spline, 0, spline.Length * rate);
+                float LastLength = spline.curves[spline.curves.Count - 1].Length;
+                meshBender.SetInterval(spline, 0, (spline.Length - LastLength) + (LastLength * rate));
                 meshBender.ComputeIfNeeded();
             }
         }
