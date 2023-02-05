@@ -5,9 +5,9 @@ using UnityEngine;
 public class CreatHurdle : MonoBehaviour
 {
 
-    [SerializeField] GameObject[] obstacles;//áŠQ•¨‚ÌŠi”[
-    //0 —{•ª@1 Šâ@2@’Ž@3@ƒ‚ƒOƒ‰
-    [SerializeField] float span;//áŠQ•¨‚ð¶¬‚·‚éŠÔŠu
+    [SerializeField] GameObject[] obstacles;//ï¿½ï¿½Qï¿½ï¿½ï¿½ÌŠiï¿½[
+    //0 ï¿½{ï¿½ï¿½ï¿½@1 ï¿½ï¿½@2ï¿½@ï¿½ï¿½ï¿½@3ï¿½@ï¿½ï¿½ï¿½Oï¿½ï¿½
+    [SerializeField] float span;//ï¿½ï¿½Qï¿½ï¿½ï¿½ð¶ï¿½ï¿½ï¿½ï¿½ï¿½ÔŠu
     float time;
     [SerializeField] GameObject tarObj;
     [SerializeField] GameStart gameStart;
@@ -24,7 +24,7 @@ public class CreatHurdle : MonoBehaviour
         if (gameStart.flag_start && !gameEnd.flag_gameEnd)
         {
             /*
-            #region áŠQ•¨‚Ì¶¬
+            #region ï¿½ï¿½Qï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½
             time += Time.deltaTime;
             if(time>span)
             {
@@ -41,7 +41,7 @@ public class CreatHurdle : MonoBehaviour
 
     void creatobstacle()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 1; i < 10; i++)
         {
             float x = Random.Range(2.5f, -2.5f);
 
