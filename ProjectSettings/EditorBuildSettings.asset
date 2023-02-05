@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Nakata/!Scene/Nakata_Scene.unity
+    guid: ff4bf6a6b112e6141bc83c51e938d098
   m_configObjects: {}
