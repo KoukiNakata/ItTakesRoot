@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RootMovement : MonoBehaviour
 {
-
+    //initializing variables
     public float MoveSpeed = 5f;
     public float RootSpeed = 5;
     public int Gap = 10;
@@ -12,16 +12,12 @@ public class RootMovement : MonoBehaviour
     public Vector3 leftRotation;
     public Vector3 preRotation;
     public GameObject BodyRoot;
-   
-
     private List<GameObject>BodyParts = new List<GameObject>();
-
     private List<Vector3> PositionsHistory = new List<Vector3>();
-
     private bool rightRotationCheck = true;
 
 
-    // Start is called before the first frame update
+    //Decides amount of bodyparts
     void Start()
     {
         GrowRoot();
@@ -76,7 +72,7 @@ public class RootMovement : MonoBehaviour
         transform.position += transform.up * MoveSpeed * Time.deltaTime;
         //Store position history
         PositionsHistory.Insert(0, transform.position);
-        // move body parts
+        //move body parts
         int index = 0;
         foreach (var body in BodyParts) {
             Vector3 point = PositionsHistory[Mathf.Min(index * Gap, PositionsHistory.Count - 1)];
@@ -94,6 +90,7 @@ public class RootMovement : MonoBehaviour
     }
     private void GrowRoot()
     {
+        //Spawn bodyparts
         GameObject body = Instantiate(BodyRoot);
         BodyParts.Add(body);
     }
