@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 5925893331723353570}
   - component: {fileID: 5917548780476340460}
   - component: {fileID: -8150593270665057864}
-  - component: {fileID: 7991396538010047927}
-  - component: {fileID: -8455828231188045351}
+  - component: {fileID: -7308833289506487026}
   m_Layer: 0
   m_Name: obstacle_rock
   m_TagString: rock
@@ -99,19 +98,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.42
   m_Center: {x: 0.103084564, y: 0.3843176, z: -0.05121477}
---- !u!114 &7991396538010047927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5930432129985069436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55a38ed79fc57a04f898b1cb1132a320, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!54 &-8455828231188045351
+--- !u!54 &-7308833289506487026
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
