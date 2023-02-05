@@ -24,7 +24,8 @@ namespace SplineMesh {
 
         [SerializeField] GameStart gameStart;
         [SerializeField] GameEnd gameEnd;
-        [SerializeField] float speed = 2;
+        [SerializeField] float CameraSpeed = 2;
+        [SerializeField] float RootSpeed = 2;
 
         public Mesh mesh;
         public Material material;
@@ -52,7 +53,7 @@ namespace SplineMesh {
         }
 
         void EditorUpdate() {
-            rate += Time.deltaTime / DurationInSecond;
+            rate += (Time.deltaTime / DurationInSecond) * RootSpeed ;
             if (rate > 1) {
                 rate --;
                 Vector3 mousePosition = Input.mousePosition;
@@ -76,7 +77,13 @@ namespace SplineMesh {
             
             if(Camera.main.transform.position.y > (-spline.nodes[spline.curves.Count].Position.y))
             {
-                Camera.main.transform.position += new Vector3(0, -speed , 0) * Time.deltaTime;
+                Camera.main.transform.position += new Vector3(0, -CameraSpeed , 0) * Time.deltaTime;
+            }
+
+            if((spline.nodes[spline.curves.Count - 1].Position.x > 3.3f) || 
+               (spline.nodes[spline.curves.Count - 1].Position.x < -3.3f) )
+            {
+                gameEnd.gameEnd();
             }
 
             Contort();
