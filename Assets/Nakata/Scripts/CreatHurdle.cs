@@ -41,7 +41,7 @@ public class CreatHurdle : MonoBehaviour
 
     void creatobstacle()
     {
-        for (int i = 1; i < 10; i++)
+        for (int i = 1; i < 100; i++)
         {
             float x = Random.Range(2.5f, -2.5f);
 
