@@ -11,21 +11,24 @@ public class meterCount : MonoBehaviour
     [SerializeField] GameEnd gameEnd;
     [SerializeField] GameObject tarObj;
     float startPos;
+    [SerializeField] Camera mainCamera;
     // Start is called before the first frame update
     void Start()
     {
         countMeter = 0;
-        startPos = tarObj.transform.position.y;
+        //startPos = tarObj.transform.position.y;
+        startPos = mainCamera.transform.position.y;
 
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(gameStart.flag_start&&!gameEnd.flag_gameEnd)
+        if (gameStart.flag_start && !gameEnd.flag_gameEnd)
         {
             //最初の位置からどれだけ進んだか
-            countMeter = (startPos- tarObj.transform.position.y);
+            // countMeter = (startPos- tarObj.transform.position.y);
+            countMeter = (startPos - mainCamera.transform.position.y);
             //メーターの表示
             meter.text = countMeter.ToString("F1") + "M";
         }
