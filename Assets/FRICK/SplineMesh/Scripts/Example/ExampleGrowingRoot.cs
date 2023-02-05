@@ -22,6 +22,10 @@ namespace SplineMesh {
         private float rate = 0;
         private MeshBender meshBender;
 
+        [SerializeField] GameStart gameStart;
+        [SerializeField] GameEnd gameEnd;
+        [SerializeField] float speed = 2;
+
         public Mesh mesh;
         public Material material;
         public Vector3 rotation;
@@ -41,7 +45,10 @@ namespace SplineMesh {
         }
 
         private void Update() {
-            EditorUpdate();
+            if(gameStart.flag_start&&!gameEnd.flag_gameEnd)
+            {
+                EditorUpdate();
+            }
         }
 
         void EditorUpdate() {
@@ -51,8 +58,27 @@ namespace SplineMesh {
                 Vector3 mousePosition = Input.mousePosition;
                 mousePosition.z = 10;
                 Vector3 target = Camera.main.ScreenToWorldPoint(mousePosition);
-                spline.AddNode(new SplineNode(new Vector3(target.x, -target.y, 0), new Vector3(0, -1, 0)));
+                float y = -target.y;
+
+                if(y < spline.nodes[spline.curves.Count].Position.y)
+                {
+                    y = spline.nodes[spline.curves.Count].Position.y + 0.5f;   
+                }
+
+                spline.AddNode(new SplineNode(
+                    new Vector3(target.x, y, 0),
+                    new Vector3(
+                            target.x + (spline.nodes[spline.curves.Count].Position.x - spline.nodes[spline.curves.Count - 1].Position.x),
+                            y + (spline.nodes[spline.curves.Count].Position.y - spline.nodes[spline.curves.Count - 1].Position.y),
+                            0))
+                );
             }
+            
+            if(Camera.main.transform.position.y > (-spline.nodes[spline.curves.Count].Position.y))
+            {
+                Camera.main.transform.position += new Vector3(0, -speed , 0) * Time.deltaTime;
+            }
+
             Contort();
         }
 
