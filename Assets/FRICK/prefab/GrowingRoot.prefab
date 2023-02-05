@@ -46,35 +46,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a85c5879d519aa4ab2ebbf42591149a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedNodeIndex: 0
+  selectedNodeIndex: 1
   nodes:
-  - position: {x: -0.26112455, y: 2.708316, z: 0}
-    direction: {x: -0.26112455, y: 3.0237155, z: 0}
+  - position: {x: -0.011776805, y: 10.830167, z: 0}
+    direction: {x: 0.39755565, y: 11.145566, z: 0}
     up: {x: 0, y: 1, z: 0}
     scale: {x: 0.2640443, y: 0.2640443}
     roll: 0
-  - position: {x: -1.6133108, y: 3.881749, z: 0}
-    direction: {x: -1.6133108, y: 4.1971483, z: 0}
+  - position: {x: -0.036622047, y: 12.0344715, z: 0}
+    direction: {x: 0.38181597, y: 12.163677, z: 0}
     up: {x: 0, y: 1, z: 0}
     scale: {x: 0.23595569, y: 0.23595569}
     roll: 0
   curves:
   - n1:
-      position: {x: -0.26112455, y: 2.708316, z: 0}
-      direction: {x: -0.26112455, y: 3.0237155, z: 0}
+      position: {x: -0.011776805, y: 10.830167, z: 0}
+      direction: {x: 0.39755565, y: 11.145566, z: 0}
       up: {x: 0, y: 1, z: 0}
       scale: {x: 0.2640443, y: 0.2640443}
       roll: 0
     n2:
-      position: {x: -1.6133108, y: 3.881749, z: 0}
-      direction: {x: -1.6133108, y: 4.1971483, z: 0}
+      position: {x: -0.036622047, y: 12.0344715, z: 0}
+      direction: {x: 0.38181597, y: 12.163677, z: 0}
       up: {x: 0, y: 1, z: 0}
       scale: {x: 0.23595569, y: 0.23595569}
       roll: 0
     Changed:
       m_PersistentCalls:
         m_Calls: []
-  Length: 1.8304133
+  Length: 1.3433595
   isLoop: 0
   CurveChanged:
     m_PersistentCalls:
@@ -91,6 +91,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0509837adb1f3f6429965e5500c48b55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameStart: {fileID: 0}
+  gameEnd: {fileID: 0}
   mesh: {fileID: 4300000, guid: 500594a39d643774c8e028335ee33da7, type: 3}
   material: {fileID: 2100000, guid: b8c8701b896a8184e8974775b53a7fd7, type: 2}
   rotation: {x: 0, y: 90, z: 0}
